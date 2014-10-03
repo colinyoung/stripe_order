@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["me@colinyoung.com"]
   spec.summary       = %q{Adds reasonable defaults to an Order model (anything with a single Stripe Charge)}
   spec.description   = %q{Standardizes Order models (or any other model with a single Stripe Charge) so that you can focus on building your app, not your Stripe integration.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/colinyoung/stripe_order"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

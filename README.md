@@ -7,16 +7,12 @@ TODO: Write a gem description
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'stripe_order'
+# Gemfile
+gem 'stripe_order', github: 'colinyoung/stripe_order', require: 'stripe/order'
+
+# Your console
+$ bundle exec rails generate stripe_order [your table] # default: 'orders'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install stripe_order
 
 ## Usage
 
