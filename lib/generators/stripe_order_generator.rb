@@ -8,6 +8,7 @@ require 'rails/generators/active_record'
 class StripeOrderGenerator < ActiveRecord::Generators::Base
   desc 'Generates the migrations needed for Stripe::Order models.'
   argument :name, type: :string, default: 'Order'
+  argument :user_table_name, type: :string, default: 'User', required: false
 
   class_option :'skip-migration', :type => :boolean, :desc => "Don't generate a migration for the slugs table"
   # class_option :'skip-initializer', :type => :boolean, :desc => "Don't generate an initializer"
@@ -18,6 +19,7 @@ class StripeOrderGenerator < ActiveRecord::Generators::Base
   def copy_files
     return if options['skip-migration']
     migration_template 'create_stripe_order_fields.rb', "db/migrate/create_stripe_order_fields_for_#{table_name}.rb"
+    migration_template 'create_stripe_customer_fields.rb', "db/migrate/create_stripe_customer_fields_for_#{user_table_name.downcase.pluralize}.rb"
   end
 
   # def create_initializer
